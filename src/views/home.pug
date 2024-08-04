@@ -1,0 +1,21 @@
+extends base
+include mixins/article
+
+block content
+    div.navigations
+        a(href="/articles/upload") Upload
+        if loggedin 
+            a(href=`/users/${loggedinUser._id}`) Profile
+            a(href="/users/logout") Logout
+        else
+            a(href="/login") Login 
+            a(href="/join") Join
+    div
+        each article in articles
+            +article(article)
+        else
+            break
+    footer
+        form(method="GET", action="/search")
+            input(type="text", name="keyword")
+            input(type="submit", value="Search")

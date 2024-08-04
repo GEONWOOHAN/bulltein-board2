@@ -1,0 +1,9 @@
+extends base
+include mixins/article
+
+block content 
+    div
+        each article in articles
+            +article(article)
+        else
+            span No articles found

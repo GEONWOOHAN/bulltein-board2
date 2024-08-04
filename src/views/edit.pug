@@ -1,0 +1,11 @@
+extends base
+
+block content 
+    form(method="POST", enctype="multipart/form-data")
+        label(for="video") Title
+        input(placeholder="Title", required, type="text", name="title", maxlength=20, value=`${article.title}`)
+        label(for="thumb") Content
+        input(placeholder="Content", required, type="text", name="content", maxlength=100, value=`${article.content}`)
+        label(for="image") Image File
+        input(type="file", accept="image/*", id="image", name="image", multiple)
+        input(type="submit", value="Upload")

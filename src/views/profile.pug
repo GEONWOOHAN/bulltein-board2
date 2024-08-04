@@ -1,0 +1,14 @@
+extends base
+include mixins/article
+
+block content
+    form(method="GET")
+        input(placeholder="Email", name="email", type="email", required, value=user.email, disabled)
+        input(placeholder="Name", name="name", type="text", required, value=user.name, disabled)
+        if user.socialOnly === false
+            div
+                a(href="/users/edit-profile") Edit Profile
+    each article in user.articles
+            +article(article)
+    else
+        break

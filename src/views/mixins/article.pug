@@ -1,0 +1,7 @@
+mixin article(article)
+    div.articles
+        a(href=`/articles/${article._id}`).article
+            span.date=article.date
+            span.title=article.title
+            span.views=article.owner.name
+            span.views=article.meta.views

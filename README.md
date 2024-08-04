@@ -1,2 +1,2 @@
-# bulltein-board2
-Bulltein board with MongoDB and Mongoose(Database)
+# bulltein-board-database-
+A  bulletin board made of Node.js and express. (+ Database using MongoDB and Mongoose)

@@ -1,0 +1,32 @@
+extends base
+
+block content
+    div#articleContainer(data-id=article._id)
+        div Title : #{article.title}
+        div Date : #{article.date}
+        div Views : #{article.meta.views}
+        div Content : #{article.content}
+        div.imgBox
+            each image in article.fileURLs
+                img(src="/" + image)
+            else
+                break
+    if loggedin
+        div
+            a(href=`${article.id}/edit`) Edit
+            br
+            a(href=`${article.id}/delete`) Delete
+        div
+            form#commentForm
+                textarea(cols="30", rows="3", placeholder="Write a nice commment...")
+                button Add Comment
+    div#article_comments
+        ul
+            each comment in article.comments.reverse()
+                li(data-id=comment.id)
+                    i.fas.fa-comment
+                    span  #{comment.text} | #{comment.owner}
+                    i.fas.fa-backspace
+
+block scripts
+    script(src="/static/js/addComment.js") 

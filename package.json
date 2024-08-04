@@ -1,0 +1,31 @@
+{
+  "name": "bulltein-board",
+  "version": "1.0.0",
+  "description": "A bulltein board",
+  "scripts": {
+    "server": "nodemon --exec babel-node src/init.js"
+  },
+  "author": "GEONWOO",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
+    "node-fetch": "^3.3.2",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/node": "^7.24.8",
+    "@babel/preset-env": "^7.24.8",
+    "nodemon": "^3.1.4"
+  }
+}
